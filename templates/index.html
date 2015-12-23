@@ -1,0 +1,86 @@
+{% import Constants %}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>{{ Constants.CONFIG['WEBSITE']['name'] }}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="description" content="{{ Constants.CONFIG['WEBSITE']['description'] }}"/>
+    <meta name="keywords" content="{{ ','.join(Constants.CONFIG['WEBSITE']['keywords']) }}"/>
+    <meta name="author" content="{{ Constants.CONFIG['WEBSITE']['author'] }}">
+
+    <!--[if lte IE 8]>
+    <script src="{{static_url('css/ie/html5shiv.js')}}"></script><![endif]-->
+    <script src="{{static_url('js/jquery.min.js')}}"></script>
+    <script src="{{static_url('js/jquery.scrollzer.min.js')}}"></script>
+    <script src="{{static_url('js/jquery.scrolly.min.js')}}"></script>
+    <script src="{{static_url('js/skel.min.js')}}"></script>
+    <script src="{{static_url('js/skel-layers.min.js')}}"></script>
+    <script src="{{static_url('js/init.js')}}"></script>
+    <!--<noscript>-->
+    <link rel="stylesheet" href="{{static_url('css/skel.css')}}"/>
+    <link rel="stylesheet" href="{{static_url('css/style.css')}}"/>
+    <link rel="stylesheet" href="{{static_url('css/style-xlarge.css')}}"/>
+    <!--</noscript>-->
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="{{static_url('css/ie/v8.css')}}"/><![endif]-->
+</head>
+<body>
+<div id="wrapper">
+
+    <!-- Header -->
+    <section id="header" class="skel-layers-fixed">
+        <header>
+            <span class="image avatar"><img src="{{ Constants.CONFIG['WEBSITE']['portrait_url'] }}" alt=""/></span>
+
+            <h1 id="logo">{{ Constants.CONFIG['WEBSITE']['author'] }}</h1>
+
+            <p>{%raw Constants.CONFIG['WEBSITE']['autograph'] %}</p>
+        </header>
+        <nav id="nav">
+            <ul>
+                {% for section in sections %}
+                    {% if section['num'] == 1 %}
+                        <li><a href="#{{ section['id'] }}" class="active">{{ section['name'] }}</a></li>
+                    {% else %}
+                        <li><a href="#{{ section['id'] }}">{{ section['name'] }}</a></li>
+                    {% end %}
+                {% end %}
+            </ul>
+        </nav>
+        <footer>
+            <ul class="icons">
+                <!--TODO: add SNS href-->
+                <li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+                <li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+        </footer>
+    </section>
+
+    <!-- Main -->
+    <div id="main">
+        {% for section in sections %}
+            {% module Section(section) %}
+        {% end %}
+     <!--TODO insert code-->
+
+
+    </div>
+
+    <!-- Footer -->
+    <section id="footer">
+        <div class="container">
+            <ul class="copyright">
+                <li>{% raw Constants.CONFIG['WEBSITE']['copyright_info'] %}</li>
+                <!--<li>More Templates <a href="" target="_blank" title="模板之家">模板之家</a> - Collect-->
+                    <!--from <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a></li>-->
+            </ul>
+        </div>
+    </section>
+
+</div>
+</body>
+</html>

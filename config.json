@@ -1,0 +1,26 @@
+{
+    "DATABASE": {
+        "password": "password",
+        "port": 27017,
+        "username": "dbadmin",
+        "host": "192.168.1.209",
+        "name": "findgf"
+    },
+    "WEBSITE": {
+        "url": "http://www.mianshi100.com",
+        "copyright_info": "&copy; mianshi100.com. All rights reserved.",
+        "domain": "mianshi100.com",
+        "author": "blackman",
+        "name": "\u6211\u7684\u7b80\u5386",
+        "autograph": "\u8fd9\u662f\u6211\u7684\u7b7e\u540d!~<br/>\u54fc\u54fc!",
+        "portrait_url": "./static/images/avatar.jpg",
+        "keywords": [
+            "\u627e\u5de5\u4f5c",
+            "\u9762\u8bd5",
+            "\u6c42\u804c",
+            "hr",
+            "offer"
+        ],
+        "description": "this is description!"
+    }
+}
