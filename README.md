@@ -1,7 +1,7 @@
 # MyResume
 ## Introduction
-- Personal Resume
--
+1. Personal Resume
+2. Tst
 ## Install
 
 ## Bug Report
