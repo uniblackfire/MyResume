@@ -13,7 +13,7 @@ class SectionModule(tornado.web.UIModule):
 
 
 class MainHandler(tornado.web.RequestHandler):
-    def get(self, current_page):
+    def get(self):
         # TODO: read sections from MongoDB
         db = Constants.CURRENT_MONGODB
         table = db['sections']
@@ -21,7 +21,10 @@ class MainHandler(tornado.web.RequestHandler):
         table.delete_many({})
 
         sections = [
-            {'num': 1, 'name': 'About', 'id': 'one', 'content': """
+            {'num': 1,
+             'name': 'About',
+             'id': 'one',
+             'content': """
              <header class="major">
                     <h2>Read Only</h2>
 

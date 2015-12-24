@@ -7,7 +7,10 @@ import tornado.web
 from tornado.options import define, options
 
 import Constants
+
 from PageHandlers.AdminHandlers.AdminHandler import AdminHandler
+from PageHandlers.AdminHandlers.AdminSigninHandler import AdminSigninHandler
+from PageHandlers.AdminHandlers.ColumnsHandler import ColumnsHandler
 from PageHandlers.ArticleHandler import *
 from PageHandlers.MainHandler import MainHandler, SectionModule
 
@@ -19,8 +22,10 @@ class Application(tornado.web.Application):
 
         # important!!!!!
         handlers = [
-            (r"/(\d*)", MainHandler),
-            (r"/admin", AdminHandler)
+            (r"/?", MainHandler),
+            (r"/admin/?", AdminHandler),
+            (r"/admin/columns", ColumnsHandler),
+            (r"/admin/signin", AdminSigninHandler),
         ]
 
         settings = dict(
