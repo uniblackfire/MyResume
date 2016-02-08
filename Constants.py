@@ -8,8 +8,7 @@ from Utils import DBUtils
 
 DEBUG_ENABLED = True  # debug enabled
 CONFIG_FILE_NAME = 'config.json'
-#### Constants below are read from config file ###
-# database info, must configured by yourself!
+# default website info, must configured by yourself!
 CONFIG = {
     'DATABASE': {
         'host'    : '192.168.1.125',
@@ -29,23 +28,11 @@ CONFIG = {
         'portrait_url': './static/images/avatar.jpg',
     }
 }
-# DATABASE_HOST = '192.168.1.209'
-# DATABASE_PORT = 27017
-# DATABASE_NAME = 'findgf'
-# DATABASE_USERNAME = 'dbadmin'
-# DATABASE_PASSWORD = 'password'
-# # site config
-# WEBSITE_NAME = '我的简历'
-# WEBSITE_DOMAIN = 'mianshi100.com'
-# WEBSITE_URL = 'http://www.' + WEBSITE_DOMAIN
-# WEBSITE_KEYWORDS = ['找工作', '面试', '求职', 'HR', 'OFFER']
-# WEBSITE_DESCRIPTION = 'this is description!'
-# WEBSITE_AUTHOR = 'blackMan'
-# WEBSITE_AUTOGRAPH = '这是我的签名!~<br/>哼哼!'
-# WEBSITE_COPYRIGHT_INFO = '&copy; ' + WEBSITE_DOMAIN + '. All rights reserved.'
+
 # page settings
 RESULTS_PER_PAGE = 10
 CURRENT_MONGODB = None
+
 
 def init():
     global CURRENT_MONGODB
@@ -55,7 +42,6 @@ def init():
                                           CONFIG['DATABASE']['name'],
                                           CONFIG['DATABASE']['username'],
                                           CONFIG['DATABASE']['password'])
-
 
 
 def init_config():
