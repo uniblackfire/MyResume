@@ -12,7 +12,7 @@ CONFIG_FILE_NAME = 'config.json'
 # database info, must configured by yourself!
 CONFIG = {
     'DATABASE': {
-        'host'    : '192.168.1.209',
+        'host'    : '192.168.1.125',
         'port'    : 27017,
         'name'    : 'findgf',
         'username': 'dbadmin',
