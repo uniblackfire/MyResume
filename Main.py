@@ -30,6 +30,7 @@ class Application(tornado.web.Application):
             ui_modules={
                 'Section': SectionModule,
             },
+            cookie_secret='ABCD0912bZJc2sWbQLKos6GkHn/VB9oXwQt8S0R0kRvJ5/xJ89E=',
             xsrf_cookies=True,
             login_url='/admin/signin',
             debug=DEBUG_ENABLED,

@@ -15,11 +15,11 @@ class AdminSigninHandler(BaseHandler):
 
     def post(self):
         self.set_secure_cookie("username", self.get_argument("username"))
-        self.redirect("/")
+        self.redirect(self.get_argument('next', '/admin'))
 
 
 class AdminSignoutHandler(BaseHandler):
     def get(self):
-        if (self.get_argument("logout", None)):
+        if self.get_argument("logout", None):
             self.clear_cookie("username")
             self.redirect("/")

@@ -34,16 +34,6 @@ RESULTS_PER_PAGE = 10
 CURRENT_MONGODB = None
 
 
-def init():
-    global CURRENT_MONGODB
-    read_config()
-    CURRENT_MONGODB = DBUtils.get_mongodb(CONFIG['DATABASE']['host'],
-                                          CONFIG['DATABASE']['port'],
-                                          CONFIG['DATABASE']['name'],
-                                          CONFIG['DATABASE']['username'],
-                                          CONFIG['DATABASE']['password'])
-
-
 def init_config():
     global CONFIG
 
@@ -63,8 +53,23 @@ def read_config():
         with open(CONFIG_FILE_NAME, 'r') as fd:
             CONFIG = json.loads(fd.read())
 
+
 # banner
 # TODO: 修改顶部图片banner,修改头像
+
+
+def init():
+    '''注释
+    init website
+    :return:
+    '''
+    global CURRENT_MONGODB
+    read_config()
+    CURRENT_MONGODB = DBUtils.get_mongodb(CONFIG['DATABASE']['host'],
+                                          CONFIG['DATABASE']['port'],
+                                          CONFIG['DATABASE']['name'],
+                                          CONFIG['DATABASE']['username'],
+                                          CONFIG['DATABASE']['password'])
 
 
 def get_site_port():
