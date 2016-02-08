@@ -1,5 +1,3 @@
-import os
-
 import tornado.httpserver
 import tornado.ioloop
 import tornado.options
@@ -7,7 +5,6 @@ import tornado.web
 from tornado.options import define, options
 
 import Constants
-
 from PageHandlers.AdminHandlers.AdminHandler import AdminHandler
 from PageHandlers.AdminHandlers.AdminSigninHandler import AdminSigninHandler
 from PageHandlers.AdminHandlers.ColumnsHandler import ColumnsHandler
@@ -19,7 +16,6 @@ define("port", default=get_site_port(), help="run on the given port", type=int)
 
 class Application(tornado.web.Application):
     def __init__(self):
-
         # important!!!!!
         handlers = [
             (r"/?", MainHandler),
@@ -34,7 +30,8 @@ class Application(tornado.web.Application):
             ui_modules={
                 'Section': SectionModule,
             },
-
+            xsrf_cookies=True,
+            login_url='/admin/signin',
             debug=DEBUG_ENABLED,
         )
         tornado.web.Application.__init__(self, handlers, **settings)

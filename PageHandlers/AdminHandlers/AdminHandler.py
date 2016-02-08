@@ -7,5 +7,6 @@ import tornado.web
 from Constants import CURRENT_MONGODB
 
 class AdminHandler(tornado.web.RequestHandler):
+    @tornado.web.authenticated
     def get(self):
-        self.render('admin/index.html')
+        self.render('admin/index.html', user=self.current_user)

@@ -50,7 +50,7 @@ def init_config():
     CONFIG['WEBSITE']['url'] = 'http://www.' + CONFIG['WEBSITE']['domain']
     CONFIG['WEBSITE']['copyright_info'] = '&copy; ' + CONFIG['WEBSITE']['domain'] + '. All rights reserved.'
     with open(CONFIG_FILE_NAME, 'w') as f:
-        f.write(json.dumps(CONFIG, indent='    '))
+        f.write(json.dumps(CONFIG, indent=' ' * 4))
 
 
 def read_config():
@@ -62,10 +62,9 @@ def read_config():
     else:  # read in config file
         with open(CONFIG_FILE_NAME, 'r') as fd:
             CONFIG = json.loads(fd.read())
-            # print(CONFIG)
 
-
-# TODO: 修改banner图片,修改头像
+# banner
+# TODO: 修改顶部图片banner,修改头像
 
 
 def get_site_port():

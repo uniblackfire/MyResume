@@ -1,19 +1,12 @@
 {
-    "DATABASE": {
-        "password": "password",
-        "port": 27017,
-        "username": "dbadmin",
-        "host": "192.168.1.125",
-        "name": "findgf"
-    },
     "WEBSITE": {
         "url": "http://www.mianshi100.com",
-        "copyright_info": "&copy; mianshi100.com. All rights reserved.",
-        "domain": "mianshi100.com",
-        "author": "blackman",
-        "name": "\u6211\u7684\u7b80\u5386",
-        "autograph": "\u8fd9\u662f\u6211\u7684\u7b7e\u540d!~<br/>\u54fc\u54fc!",
         "portrait_url": "./static/images/avatar.jpg",
+        "domain": "mianshi100.com",
+        "autograph": "\u8fd9\u662f\u6211\u7684\u7b7e\u540d!~<br/>\u54fc\u54fc!",
+        "copyright_info": "&copy; mianshi100.com. All rights reserved.",
+        "description": "this is description!",
+        "author": "blackman",
         "keywords": [
             "\u627e\u5de5\u4f5c",
             "\u9762\u8bd5",
@@ -21,6 +14,13 @@
             "hr",
             "offer"
         ],
-        "description": "this is description!"
+        "name": "\u6211\u7684\u7b80\u5386"
+    },
+    "DATABASE": {
+        "password": "password",
+        "port": 27017,
+        "username": "dbadmin",
+        "host": "192.168.1.125",
+        "name": "findgf"
     }
 }
