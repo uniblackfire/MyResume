@@ -14,6 +14,7 @@ class AdminSigninHandler(BaseHandler):
         self.render('admin/signin.html')
 
     def post(self):
+        print(self.get_argument("username"))
         self.set_secure_cookie("username", self.get_argument("username"))
         self.redirect(self.get_argument('next', '/admin'))
 
